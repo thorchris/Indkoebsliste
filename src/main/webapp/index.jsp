@@ -13,6 +13,17 @@
 <body>
 
 Velkommen til min online indkøbsliste
+<br>
+<br>
+<h2>Login side</h2>
+<br>
+<form action="LoginServlet" method="post">
+    <label for="fname">Username:</label><br>
+    <input type="text" id="fname" name="brugernavn"><br>
+    <label for="lname">Password:</label><br>
+    <input type="text" id="lname" name="kodeord"><br><br>
+    <input type="submit" value="Login">
+</form>
 
 </body>
 </html>
