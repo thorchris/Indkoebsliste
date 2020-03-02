@@ -4,6 +4,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +14,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         ServletContext servletContext = getServletContext();
+
+        HttpSession session = request.getSession();
 
         String brugernavn = request.getParameter("brugernavn");
         String kodeord = request.getParameter("kodeord");
@@ -29,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 
 
         if(!((Map<String, String>)  servletContext.getAttribute("brugerMap") ).containsKey(brugernavn) ) {
-            //TODO gå til loginside
+
             request.setAttribute("besked", "Brugernavn findes ikke, opret ny bruger her");
             request.getRequestDispatcher("WEB-INF/OpretBruger.jsp").forward(request, response);
         }
@@ -40,6 +43,7 @@ public class LoginServlet extends HttpServlet {
             // TODO gå til adminside
                 request.getRequestDispatcher("WEB-INF/admin.jsp").forward(request,response);
             }
+            session.setAttribute("besked", "Du er logget ind med navnet " + brugernavn);
             request.getRequestDispatcher("WEB-INF/HuskeListe.jsp").forward(request,response);
         }
 

@@ -11,6 +11,8 @@
     <title>Huskeliste</title>
 </head>
 <body>
+
+${sessionScope.besked}
 <h1>Du er nu klar til at ligge i kurven og chekce ud</h1>
 </body>
 </html>
