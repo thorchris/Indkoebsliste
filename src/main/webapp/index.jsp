@@ -12,8 +12,10 @@
 </head>
 <body>
 
-Velkommen til min online indkøbsliste
+<h1>Velkommen til min online indkøbsliste</h1>
 <br>
+<br>
+${requestScope.besked}
 <br>
 <h2>Login side</h2>
 <br>
