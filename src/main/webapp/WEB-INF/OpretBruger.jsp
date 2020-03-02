@@ -12,7 +12,7 @@
 </head>
 <body>
 
-Her kan du oprette en bruger på huskelisten
+Her skal du oprette en bruger inden du kan ligge i kurv.
 <br>
 <br>
 ${requestScope.besked}
