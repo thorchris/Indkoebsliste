@@ -15,7 +15,16 @@
 Her kan du se listen brugere og slette dem.
 <br>
 <br>
-
+${requestScope.besked}
+<br>
+<form action="AdminServlet" method="post">
+    <label for="fname">Slet bruger:</label><br>
+    <input type="text" id="fname" name="brugernavn"><br>
+    <input type="submit" value="Slet">
+</form>
+<br>
+<br>
+<br>
 <c:forEach var="element" items="${applicationScope.brugerMap}">
     ${element}
     <br>

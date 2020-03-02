@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 
             if(brugernavn.equalsIgnoreCase("admin")){
             // TODO gå til adminside
-                request.getRequestDispatcher("WEB-INF/Admin.jsp").forward(request,response);
+                request.getRequestDispatcher("WEB-INF/admin.jsp").forward(request,response);
             }
             request.getRequestDispatcher("WEB-INF/HuskeListe.jsp").forward(request,response);
         }
